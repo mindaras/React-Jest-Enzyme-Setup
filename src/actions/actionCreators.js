@@ -1,0 +1,16 @@
+import { SAVE_COMMENT, FETCH_COMMENTS } from 'actions/types';
+import axios from 'axios';
+
+export function saveComment(comment) {
+  return {
+    type: SAVE_COMMENT,
+    payload: comment
+  };
+}
+
+export function fetchComments() {
+  return function(dispatch) {
+    axios.get('http://jsonplaceholder.typicode.com/comments')
+      .then(response => dispatch({ type: FETCH_COMMENTS, payload: response }));
+  };
+}
