@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import moxios from 'moxios';
-import axios from 'axios';
 import Root from 'Root';
 import App from 'components/App';
 
